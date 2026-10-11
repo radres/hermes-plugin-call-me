@@ -1,0 +1,40 @@
+name: call-me
+label: /call-me
+kind: platform
+version: 0.1.0
+requires_hermes: ">=0.21.5"
+author: radres
+description: >
+  /call-me gateway for Hermes Agent. Gives your agent its own phone number in the
+  /call-me iPhone app: you text it from your phone, it texts back, and it can ring
+  your phone, speak a question and hand your spoken answer back as text. Several
+  numbers can share one agent (you and your family). Only listed numbers reach the
+  agent, and only from a verified /call-me device.
+provides_tools:
+  - callme_call
+requires_env:
+  - name: CALLME_ALLOWED_USERS
+    description: "Comma-separated 10-digit /call-me numbers allowed to talk to the agent (each person's /call-me app shows theirs)"
+    prompt: "/call-me numbers allowed to use the agent (comma-separated)"
+    password: false
+optional_env:
+  - name: CALLME_NAMES
+    description: "Names for those numbers, e.g. 5551234567=Sam,5559876543=Alex (shown to the agent and usable with callme_call)"
+    prompt: "Names for the numbers (number=name, comma-separated, or empty)"
+    password: false
+  - name: CALLME_LABEL
+    description: "Thread name the phone shows for this agent (default: Hermes)"
+    prompt: "Thread name on the phone"
+    password: false
+  - name: CALLME_HOME_CHANNEL
+    description: "Number that receives cron and notification deliveries (default: the first allowed number)"
+    prompt: "Home number for cron delivery (or empty)"
+    password: false
+  - name: CALLME_HOME_CHANNEL_NAME
+    description: "Label for the home channel"
+    prompt: "Home channel name (or empty)"
+    password: false
+  - name: CALLME_ALLOW_UNVERIFIED
+    description: "Also accept messages from numbers with no verified /call-me device (old app builds). Off by default; leave it off unless you know why"
+    prompt: "Accept unverified senders? (true/false)"
+    password: false

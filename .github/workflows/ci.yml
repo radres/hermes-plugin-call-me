@@ -1,0 +1,27 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: plugin
+      - uses: actions/checkout@v4
+        with:
+          repository: NousResearch/hermes-agent
+          ref: v0.21.6
+          path: hermes-agent
+      - uses: astral-sh/setup-uv@v6
+      - name: Install Hermes
+        working-directory: hermes-agent
+        run: uv sync
+      - name: Unit tests
+        working-directory: plugin
+        run: PYTHONPATH=$GITHUB_WORKSPACE/hermes-agent $GITHUB_WORKSPACE/hermes-agent/.venv/bin/python -m unittest discover -s tests -v
+      - name: Catalog validation
+        run: hermes-agent/.venv/bin/hermes plugins validate plugin
