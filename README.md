@@ -30,7 +30,7 @@ you:                "Yes, ask about Thursday"
 ## Install
 
 ```bash
-hermes plugins install call-me
+hermes plugins install callmemcp
 ```
 
 Or straight from GitHub:
@@ -50,10 +50,11 @@ Then:
    CALLME_NAMES=5551234567=Sam,5559876543=Alex
    ```
 
-3. Enable the platform and restart the gateway:
+3. Restart the gateway. The platform turns itself on once `CALLME_ALLOWED_USERS`
+   is set:
 
    ```bash
-   hermes gateway setup      # pick /call-me
+   hermes gateway install    # first time: run the gateway as a background service
    hermes gateway restart
    ```
 
