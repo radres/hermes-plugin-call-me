@@ -1,14 +1,14 @@
 # /call-me for Hermes Agent
 
-**Text your Hermes agent from your iPhone. It texts back, and when a text is not
+**Text your Hermes agent from your phone. It texts back, and when a text is not
 enough it rings your phone, asks out loud, and turns your spoken answer into text.**
 
-[/call-me](https://callmemcp.com) is an iPhone app that gives you a private
+[/call-me](https://callmemcp.com) is a phone app (iPhone and Android) that gives you a private
 10-digit number for your AI agents. This plugin makes it a Hermes gateway
 platform, next to Telegram, Signal or Slack:
 
 - **Text the agent** from the /call-me app, like any other chat thread.
-- **Get replies** as normal iPhone notifications, lock screen included.
+- **Get replies** as normal phone notifications, lock screen included.
 - **Get called.** The `callme_call` tool rings the phone with a real incoming-call
   screen, speaks the agent's text, waits for your answer, and returns the
   transcript to the agent.
@@ -41,7 +41,8 @@ hermes plugins install https://github.com/radres/hermes-plugin-call-me
 
 Then:
 
-1. Install /call-me on each iPhone: [App Store](https://callmemcp.com/aiphone/go/hermes).
+1. Install /call-me on each phone: [App Store](https://callmemcp.com/go/hermes) or
+   [Google Play](https://callmemcp.com/go/play-hermes).
    Open it and note the 10-digit number it shows.
 2. Add the numbers to the Hermes profile's `.env`:
 
@@ -110,7 +111,7 @@ the agent: reply to it to talk to Hermes.
 
 ## Cost
 
-/call-me is a subscription app on the receiving iPhone. The plugin itself is free
+/call-me is a subscription app on the receiving phone. The plugin itself is free
 and MIT-licensed.
 
 ## Development

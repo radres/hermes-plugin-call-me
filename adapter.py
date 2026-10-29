@@ -35,7 +35,7 @@ GREETING = (
 )
 
 PLATFORM_HINT = (
-    "You are texting with the user through /call-me, an iPhone app that gives your agent a phone "
+    "You are texting with the user through /call-me, a phone app that gives your agent a phone "
     "number. Write like a text message: plain text, no markdown, short paragraphs. Each message is "
     "capped at 2000 characters. When a text is not enough (something urgent, or you need a spoken "
     "answer right now), use the callme_call tool to ring their phone; it speaks your text and returns "
@@ -307,7 +307,7 @@ async def _standalone_send(pconfig, chat_id: str, message: str, *, thread_id: Op
 CALL_TOOL_SCHEMA = {
     "name": "callme_call",
     "description": (
-        "Ring the user's iPhone through /call-me, speak your text aloud, and wait for their spoken "
+        "Ring the user's phone through /call-me, speak your text aloud, and wait for their spoken "
         "answer, which comes back as a transcript. Only numbers in CALLME_ALLOWED_USERS can be called. "
         "Prefer a text message; call when it is urgent or a spoken answer is needed now. Keep the text "
         "short and end with a question that can be answered in one sentence."
